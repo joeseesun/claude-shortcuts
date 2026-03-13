@@ -15,10 +15,24 @@ const catConfig: Record<string, { dot: string; badge: string; border: string; gl
   'vim-mode':{ dot: 'bg-red-400',    badge: 'bg-red-400/10 text-red-400 border-red-400/20',         border: 'border-l-red-400',    glow: 'shadow-red-500/20',    label: 'Vim 切换' },
   'vim-nav': { dot: 'bg-indigo-400', badge: 'bg-indigo-400/10 text-indigo-400 border-indigo-400/20', border: 'border-l-indigo-400', glow: 'shadow-indigo-500/20', label: 'Vim 导航' },
   'vim-edit':{ dot: 'bg-orange-400', badge: 'bg-orange-400/10 text-orange-400 border-orange-400/20', border: 'border-l-orange-400', glow: 'shadow-orange-500/20', label: 'Vim 编辑' },
-  'vim-text':{ dot: 'bg-pink-400',   badge: 'bg-pink-400/10 text-pink-400 border-pink-400/20',       border: 'border-l-pink-400',   glow: 'shadow-pink-500/20',   label: 'Vim 文本对象' },
+  'vim-text':   { dot: 'bg-pink-400',   badge: 'bg-pink-400/10 text-pink-400 border-pink-400/20',         border: 'border-l-pink-400',   glow: 'shadow-pink-500/20',   label: 'Vim 文本对象' },
+  'cmd-session':{ dot: 'bg-sky-400',    badge: 'bg-sky-400/10 text-sky-400 border-sky-400/20',             border: 'border-l-sky-400',    glow: 'shadow-sky-500/20',    label: '会话管理' },
+  'cmd-info':   { dot: 'bg-teal-400',   badge: 'bg-teal-400/10 text-teal-400 border-teal-400/20',           border: 'border-l-teal-400',   glow: 'shadow-teal-500/20',   label: '信息查看' },
+  'cmd-model':  { dot: 'bg-violet-400', badge: 'bg-violet-400/10 text-violet-400 border-violet-400/20',     border: 'border-l-violet-400', glow: 'shadow-violet-500/20', label: '模式控制' },
+  'cmd-config': { dot: 'bg-slate-400',  badge: 'bg-slate-400/10 text-slate-400 border-slate-400/20',        border: 'border-l-slate-400',  glow: 'shadow-slate-500/20',  label: '配置管理' },
+  'cmd-code':   { dot: 'bg-rose-400',   badge: 'bg-rose-400/10 text-rose-400 border-rose-400/20',           border: 'border-l-rose-400',   glow: 'shadow-rose-500/20',   label: '代码工具' },
+  'cmd-ext':    { dot: 'bg-lime-400',   badge: 'bg-lime-400/10 text-lime-400 border-lime-400/20',           border: 'border-l-lime-400',   glow: 'shadow-lime-500/20',   label: '集成扩展' },
 };
 
 function KeyBadge({ text }: { text: string }) {
+  // Slash commands get code block styling
+  if (text.startsWith('/') || text.startsWith('!')) {
+    return (
+      <code className="inline-block px-2.5 py-0.5 bg-gray-900 text-green-300 text-sm font-mono border border-gray-700 rounded-lg leading-6">
+        {text}
+      </code>
+    );
+  }
   return (
     <span className="inline-flex items-center gap-1.5 flex-wrap">
       {text.split(' / ').map((part, i) => (
@@ -387,14 +401,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl md:text-[52px] font-bold tracking-tight mb-3 leading-none">
-            <span className="text-white">快捷键</span>
-            <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">速成指南</span>
+            <span className="text-white">Claude Code</span>
+            <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">完整指南</span>
           </h1>
           <p className="text-gray-500 text-base max-w-sm mx-auto leading-relaxed">
-            掌握 Claude Code 的全部快捷键，提升编码效率
+            快捷键 · 内置命令 · Vim 模式，一网打尽
           </p>
           <p className="text-gray-700 text-xs mt-2 font-mono tabular-nums">
-            {shortcuts.length} shortcuts · {categories.length} categories
+            {shortcuts.length} entries · {categories.length} categories
           </p>
         </div>
 
