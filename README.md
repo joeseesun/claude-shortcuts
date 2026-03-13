@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Claude Code 快捷键速成指南
 
-## Getting Started
+> 互动式学习 Claude Code 全部快捷键，浏览 + 测验双模式
 
-First, run the development server:
+**在线体验** → [claude-shortcuts.vercel.app](https://claude-shortcuts.vercel.app)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fjoeseesun%2Fclaude-shortcuts)
+
+## 功能
+
+- **浏览模式**：按分类查看全部 79 个快捷键，点击卡片揭示答案，支持搜索和筛选
+- **测验模式**：随机抽题四选一，最多 20 题，按分类专项练习
+
+## 快捷键分类
+
+| 分类 | 数量 |
+|------|------|
+| 通用控制 | 17 |
+| 文本编辑 | 6 |
+| 多行输入 | 5 |
+| 快捷命令 | 3 |
+| Vim 模式切换 | 7 |
+| Vim 导航 | 15 |
+| Vim 编辑 | 15 |
+| Vim 文本对象 | 7 |
+
+## 本地运行
 
 ```bash
+git clone https://github.com/joeseesun/claude-shortcuts.git
+cd claude-shortcuts
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 技术栈
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS
 
-## Learn More
+## 数据来源
 
-To learn more about Next.js, take a look at the following resources:
+[Claude Code 官方文档](https://code.claude.com/docs/en/interactive-mode)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 关注作者
 
-## Deploy on Vercel
+如果这个项目对你有帮助，欢迎关注我获取更多技术分享：
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **X (Twitter)**: [@vista8](https://x.com/vista8)
+- **微信公众号「向阳乔木推荐看」**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">
+  <img src="https://github.com/joeseesun/terminal-boost/raw/main/assets/wechat-qr.jpg?raw=true" alt="向阳乔木推荐看公众号二维码" width="200">
+</p>
